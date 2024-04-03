@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-26T12:34:54.921973" rpa="false" schemaversion="5">
+<suite id="s1" name="Put Serverest Test" source="c:\Users\tha_c\OneDrive\Área de Trabalho\Thaís\Cursos\API-Postman\api-robot\tests\put_serverest_test.robot">
+<test id="s1-t1" name="Cenário com PUT: Atualizar os dados de um usuário" line="7">
+<kw name="Criar um novo usuário" owner="serverest_testes_recursos">
+<kw name="Generate Random String" owner="String">
+<msg time="2024-03-26T12:34:55.060486" level="INFO">${palavra_randomica} = FpDfvtDO</msg>
+<var>${palavra_randomica}</var>
+<arg>length=8</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.060486" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2024-03-26T12:34:55.060486" level="INFO">${palavra_randomica} = fpdfvtdo</msg>
+<var>${palavra_randomica}</var>
+<arg>${palavra_randomica}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.060486" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.066135" level="INFO">${EMAIL_TEST} = fpdfvtdo@qacoders.com.br</msg>
+<arg>${EMAIL_TEST}</arg>
+<arg>${palavra_randomica}@qacoders.com.br</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.060486" elapsed="0.005649"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.066135" level="INFO">fpdfvtdo@qacoders.com.br</msg>
+<arg>${EMAIL_TEST}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.066135" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-03-26T12:34:55.060486" elapsed="0.005649"/>
+</kw>
+<kw name="Cadastrar o novo usuário criado" owner="serverest_testes_recursos">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.067641" level="INFO">${body} = {'nome': 'Fulano da Silva', 'email': 'fpdfvtdo@qacoders.com.br', 'password': 'teste', 'administrador': 'true'}</msg>
+<var>${body}</var>
+<arg>nome=Fulano da Silva</arg>
+<arg>email=${EMAIL_TEST}</arg>
+<arg>password=teste</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.067641" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.069499" level="INFO">{'nome': 'Fulano da Silva', 'email': 'fpdfvtdo@qacoders.com.br', 'password': 'teste', 'administrador': 'true'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.069499" elapsed="0.000000"/>
+</kw>
+<kw name="Criar sessão" owner="serverest_testes_recursos">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.070608" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.069499" elapsed="0.001109"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-26T12:34:55.070608" level="INFO">Creating Session using : alias=APIServerRest, url=https://serverest.dev, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=APIServerRest</arg>
+<arg>url=https://serverest.dev</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-26T12:34:55.070608" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-03-26T12:34:55.069499" elapsed="0.001109"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-03-26T12:34:55.438830" level="INFO">POST Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '110'} 
+ body=b'{"nome": "Fulano da Silva", "email": "fpdfvtdo@qacoders.com.br", "password": "teste", "administrador": "true"}' 
+ </msg>
+<msg time="2024-03-26T12:34:55.439842" level="INFO">POST Response : url=https://serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'e4176b2adac98ac5eed963954434c44a;o=1', 'Date': 'Tue, 26 Mar 2024 15:34:54 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "GY4WmsJ1aKhyOsst"
+} 
+ </msg>
+<msg time="2024-03-26T12:34:55.439842" level="INFO">C:\Users\tha_c\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-26T12:34:55.441749" level="INFO">${resposta} = &lt;Response [201]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=APIServerRest</arg>
+<arg>url=/usuarios</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.071640" elapsed="0.370109"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.442748" level="INFO">{'message': 'Cadastro realizado com sucesso', '_id': 'GY4WmsJ1aKhyOsst'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.441749" elapsed="0.000999"/>
+</kw>
+<kw name="Set Task Variable" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.445750" level="INFO">${ID_USUARIO} = GY4WmsJ1aKhyOsst</msg>
+<arg>${ID_USUARIO}</arg>
+<arg>${resposta.json()["_id"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current task.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.442748" elapsed="0.003002"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.446819" level="INFO">${RESPOSTA} = {'message': 'Cadastro realizado com sucesso', '_id': 'GY4WmsJ1aKhyOsst'}</msg>
+<arg>${RESPOSTA}</arg>
+<arg>${resposta.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.445750" elapsed="0.001069"/>
+</kw>
+<status status="PASS" start="2024-03-26T12:34:55.067641" elapsed="0.379178"/>
+</kw>
+<kw name="Consultar os dados do usuário" owner="serverest_testes_recursos">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-26T12:34:55.627954" level="INFO">GET Request : url=https://serverest.dev/usuarios/GY4WmsJ1aKhyOsst 
+ path_url=/usuarios/GY4WmsJ1aKhyOsst 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-03-26T12:34:55.627954" level="INFO">GET Response : url=https://serverest.dev/usuarios/GY4WmsJ1aKhyOsst 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'd1dd1d2c91534c3d332e980c5f02a254', 'Date': 'Tue, 26 Mar 2024 15:34:54 GMT', 'Server': 'Google Frontend', 'Content-Length': '159'} 
+ body={
+    "nome": "Fulano da Silva",
+    "email": "fpdfvtdo@qacoders.com.br",
+    "password": "teste",
+    "administrador": "true",
+    "_id": "GY4WmsJ1aKhyOsst"
+} 
+ </msg>
+<msg time="2024-03-26T12:34:55.627954" level="INFO">C:\Users\tha_c\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-26T12:34:55.627954" level="INFO">${resposta_consulta} = &lt;Response [200]&gt;</msg>
+<var>${resposta_consulta}</var>
+<arg>alias=APIServerRest</arg>
+<arg>url=/usuarios/${ID_USUARIO}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.447799" elapsed="0.180155"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.632962" level="INFO">${RESPOSTA_CONSULTA} = {'nome': 'Fulano da Silva', 'email': 'fpdfvtdo@qacoders.com.br', 'password': 'teste', 'administrador': 'true', '_id': 'GY4WmsJ1aKhyOsst'}</msg>
+<arg>${RESPOSTA_CONSULTA}</arg>
+<arg>${resposta_consulta.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.627954" elapsed="0.005008"/>
+</kw>
+<status status="PASS" start="2024-03-26T12:34:55.447799" elapsed="0.185163"/>
+</kw>
+<kw name="Alterar perfil de acesso administrador de true para false" owner="serverest_testes_recursos">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2024-03-26T12:34:55.798952" level="INFO">PUT Request : url=https://serverest.dev/usuarios/GY4WmsJ1aKhyOsst 
+ path_url=/usuarios/GY4WmsJ1aKhyOsst 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '107'} 
+ body={"nome":"Fulano da Silva", "email":"fpdfvtdo@qacoders.com.br", "password":"teste", "administrador":"false"} 
+ </msg>
+<msg time="2024-03-26T12:34:55.798952" level="INFO">PUT Response : url=https://serverest.dev/usuarios/GY4WmsJ1aKhyOsst 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '132f72b047752e3b85f432628a2a1d01', 'Date': 'Tue, 26 Mar 2024 15:34:54 GMT', 'Server': 'Google Frontend', 'Content-Length': '50'} 
+ body={
+    "message": "Registro alterado com sucesso"
+} 
+ </msg>
+<msg time="2024-03-26T12:34:55.798952" level="INFO">C:\Users\tha_c\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-26T12:34:55.798952" level="INFO">${alterar_perfil_usuario} = &lt;Response [200]&gt;</msg>
+<var>${alterar_perfil_usuario}</var>
+<arg>alias=APIServerRest</arg>
+<arg>url=/usuarios/${ID_USUARIO}</arg>
+<arg>expected_status=200</arg>
+<arg>data={"nome":"Fulano da Silva", "email":"${EMAIL_TEST}", "password":"teste", "administrador":"false"}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.632962" elapsed="0.165990"/>
+</kw>
+<status status="PASS" start="2024-03-26T12:34:55.632962" elapsed="0.165990"/>
+</kw>
+<kw name="Consultar os dados do usuário" owner="serverest_testes_recursos">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-26T12:34:55.978987" level="INFO">GET Request : url=https://serverest.dev/usuarios/GY4WmsJ1aKhyOsst 
+ path_url=/usuarios/GY4WmsJ1aKhyOsst 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-03-26T12:34:55.979989" level="INFO">GET Response : url=https://serverest.dev/usuarios/GY4WmsJ1aKhyOsst 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'f39465534bdc992a526021a9f377ae2f', 'Date': 'Tue, 26 Mar 2024 15:34:54 GMT', 'Server': 'Google Frontend', 'Content-Length': '160'} 
+ body={
+    "nome": "Fulano da Silva",
+    "email": "fpdfvtdo@qacoders.com.br",
+    "password": "teste",
+    "administrador": "false",
+    "_id": "GY4WmsJ1aKhyOsst"
+} 
+ </msg>
+<msg time="2024-03-26T12:34:55.979989" level="INFO">C:\Users\tha_c\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-26T12:34:55.979989" level="INFO">${resposta_consulta} = &lt;Response [200]&gt;</msg>
+<var>${resposta_consulta}</var>
+<arg>alias=APIServerRest</arg>
+<arg>url=/usuarios/${ID_USUARIO}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.802959" elapsed="0.177030"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-03-26T12:34:55.979989" level="INFO">${RESPOSTA_CONSULTA} = {'nome': 'Fulano da Silva', 'email': 'fpdfvtdo@qacoders.com.br', 'password': 'teste', 'administrador': 'false', '_id': 'GY4WmsJ1aKhyOsst'}</msg>
+<arg>${RESPOSTA_CONSULTA}</arg>
+<arg>${resposta_consulta.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-03-26T12:34:55.979989" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-03-26T12:34:55.798952" elapsed="0.181037"/>
+</kw>
+<status status="PASS" start="2024-03-26T12:34:55.060486" elapsed="0.919503"/>
+</test>
+<status status="PASS" start="2024-03-26T12:34:54.925952" elapsed="1.059055"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Put Serverest Test">Put Serverest Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
