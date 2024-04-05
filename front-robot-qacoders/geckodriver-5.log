@@ -1,0 +1,34 @@
+1712352908848	geckodriver	INFO	Listening on 127.0.0.1:63919
+1712352911922	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63920" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\tha_c\\AppData\\Local\\Temp\\rust_mozprofilehQnxFt"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1712352912315	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1712352912419	Marionette	INFO	Listening on port 63932
+WebDriver BiDi listening on ws://127.0.0.1:63920
+Read port: 63932
+1712352912654	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:63920/devtools/browser/a311e09f-7760-441e-bf8f-ae5b78e819ff
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://automacao.qacoders-academy.com.br."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://automacao.qacoders-academy.com.br."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://automacao.qacoders-academy.com.br."
+1712352918311	Marionette	INFO	Stopped listening on port 63932
+JavaScript warning: https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js, line 1: Script terminated by timeout at:
+createStringFromObject@https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js:1:15054
+handleInterpolation@https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js:1:14737
+createStringFromObject@https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js:1:15399
+handleInterpolation@https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js:1:14737
+handleInterpolation@https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js:1:14823
+serializeStyles@https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js:1:15737
+4567/createStyled/y/k<@https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js:1:21504
+6375/withEmotionCache/<@https://automacao.qacoders-academy.com.br/_next/static/chunks/430-91c29decc4301096.js:1:12333
+Mf@https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js:9:39686
+vh@https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js:9:57277
+rC@https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js:9:115143
+Jk@https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js:9:102247
+Ik@https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js:9:101424
+df@https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js:9:101240
+qf@https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js:9:97944
+P@https://automacao.qacoders-academy.com.br/_next/static/chunks/472-4351fcb36e5c7d57.js:25:1666
+
+Dynamically enable window occlusion 1

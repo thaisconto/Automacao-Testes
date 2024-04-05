@@ -1,14 +1,33 @@
 *** Settings ***
-Resource  ../resources/testes_resources_serverest.resource
+Resource  ../resources/testes_resources_qacoders.resource
 Test Setup  Abrir navegador
 Test Teardown  Fechar navegador
 
 *** Test Cases ***
-Cenário de teste: Cadastro de usuário administrador
-  Passo 1 - Acessar página de Login 
-  Passo 2 - Clicar em cadastre-se
-  Passo 3 - Inserir nome
-  Passp 4 - Inseir e-mail
-  Passo 5 - Inserir senha
-  Passo 6 - Escolher opção de usuário como adm
-  Passo 7 - Clicar em cadastrar 
+Cenário de teste: Login com sucesso
+  Acessar página de Login 
+  Inserir e-mail
+  Inserir senha
+  Clicar em entrar
+#  Validar login - URL/home
+
+Cenário de teste: Login com email vazio
+  Acessar página de Login 
+  Inserir e-mail vazio
+  Inserir senha
+  Clicar em entrar
+  Validar mensagem: O email é obrigatório
+
+Cenário de teste: Login com senha vazia
+  Acessar página de Login 
+  Inserir e-mail
+  Inserir senha vazia
+  Clicar em entrar
+  Validar mensagem: A senha é obrigatória
+
+Cenário de teste: Login com email iválido
+  Acessar página de Login 
+  Inserir e-mail iválido
+  Inserir senha
+  Clicar em entrar
+  Validar mensagem: E

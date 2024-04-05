@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-05T18:35:07.766132" rpa="false" schemaversion="5">
+<suite id="s1" name="Testes Qacoders" source="c:\Users\tha_c\OneDrive\Área de Trabalho\Thaís\Cursos\API-Postman\Automacao-Testes\front-robot-qacoders\tests\testes_qacoders.robot">
+<test id="s1-t1" name="Cenário de teste: Login com email iválido" line="28">
+<kw name="Abrir navegador" owner="testes_resources_qacoders" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:35:08.036869" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-05T18:35:08.036869" elapsed="7.160164"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-05T18:35:15.197033" elapsed="0.005913"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:35:08.031953" elapsed="7.170993"/>
+</kw>
+<kw name="Acessar página de Login" owner="testes_resources_qacoders">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:35:15.206459" level="INFO">Opening url 'https://automacao.qacoders-academy.com.br/login'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-04-05T18:35:15.206459" elapsed="0.386129"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-05T18:35:17.593145" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-05T18:35:15.592588" elapsed="2.000557"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:35:15.206459" elapsed="2.388203"/>
+</kw>
+<kw name="Inserir e-mail iválido" owner="testes_resources_qacoders">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${emailInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-05T18:35:17.594662" elapsed="0.055916"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:35:17.655584" level="INFO">Typing text 'teste@teste.com' into text field '//input[contains(@type,'text')]'.</msg>
+<arg>locator=${emailInput}</arg>
+<arg>text=teste@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:35:17.650578" elapsed="0.184720"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:35:17.594662" elapsed="0.240636"/>
+</kw>
+<kw name="Inserir senha" owner="testes_resources_qacoders">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${senhaInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-05T18:35:17.840303" elapsed="0.045552"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:35:17.885855" level="INFO">Typing password into text field '//input[contains(@type,'password')]'.</msg>
+<msg time="2024-04-05T18:35:17.900867" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>locator=${senhaInput}</arg>
+<arg>password=1234@Test</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:35:17.885855" elapsed="0.050605"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:35:17.840303" elapsed="0.096157"/>
+</kw>
+<kw name="Clicar em entrar" owner="testes_resources_qacoders">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${entrarButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-05T18:35:17.941458" elapsed="0.018547"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:35:17.962139" level="INFO">Clicking button '//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedOrange MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedOrange MuiButton-sizeMedium MuiButton-containedSizeMedium css-ojf4v2'][contains(.,'Entrar')]'.</msg>
+<arg>locator=${entrarButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:35:17.961530" elapsed="0.251479"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:35:17.941458" elapsed="0.271551"/>
+</kw>
+<kw name="Validar mensagem: E" owner="testes_resources_qacoders">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${msgE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-05T18:35:18.217978" elapsed="0.030855"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T18:35:18.289935" level="INFO">${message_text} = Email</msg>
+<var>${message_text}</var>
+<arg>locator=${msgE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T18:35:18.248833" elapsed="0.041102"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-04-05T18:35:18.294921" level="FAIL">Email != E</msg>
+<arg>${message_text}</arg>
+<arg>E</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-04-05T18:35:18.294921" elapsed="0.005008">Email != E</status>
+</kw>
+<status status="FAIL" start="2024-04-05T18:35:18.213009" elapsed="0.086920">Email != E</status>
+</kw>
+<kw name="Fechar navegador" owner="testes_resources_qacoders" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-05T18:35:18.304924" elapsed="3.746689"/>
+</kw>
+<status status="PASS" start="2024-04-05T18:35:18.299929" elapsed="3.751684"/>
+</kw>
+<status status="FAIL" start="2024-04-05T18:35:08.031953" elapsed="14.019660">Email != E</status>
+</test>
+<status status="FAIL" start="2024-04-05T18:35:07.771144" elapsed="14.285494"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Testes Qacoders">Testes Qacoders</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

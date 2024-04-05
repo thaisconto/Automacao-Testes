@@ -1,0 +1,19 @@
+1712352159787	geckodriver	INFO	Listening on 127.0.0.1:62839
+1712352162845	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62840" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\tha_c\\AppData\\Local\\Temp\\rust_mozprofilewq7uHp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1712352163625	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1712352163885	Marionette	INFO	Listening on port 62853
+WebDriver BiDi listening on ws://127.0.0.1:62840
+Read port: 62853
+1712352164189	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:62840/devtools/browser/1fb3f4c0-c8d7-435f-b1c5-da8c4540b614
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://automacao.qacoders-academy.com.br."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://automacao.qacoders-academy.com.br."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://automacao.qacoders-academy.com.br."
+1712352170819	Marionette	INFO	Stopped listening on port 62853
+JavaScript warning: https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js, line 9: Script terminated by timeout at:
+xm@https://automacao.qacoders-academy.com.br/_next/static/chunks/fd9d1056-529e8696ae1b71f6.js:9:125194
+
+Dynamically enable window occlusion 1
