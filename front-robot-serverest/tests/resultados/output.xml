@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-03T19:54:04.913227" rpa="false" schemaversion="5">
+<suite id="s1" name="Testes Serverest" source="C:\Users\tha_c\OneDrive\Área de Trabalho\Thaís\Cursos\API-Postman\Automacao-Testes\front-robot-serverest\tests\testes_serverest.robot">
+<test id="s1-t1" name="Cenário de teste: Cadastro de usuário administrador" line="5">
+<kw name="Passo 1 - Acessar página de Login" owner="testes_resources_serverest">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-03T19:54:05.108098" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-03T19:54:05.108098" elapsed="6.259494"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-03T19:54:11.367592" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-04-03T19:54:11.367592" level="INFO">Opening url 'https://front.serverest.dev/login'</msg>
+<arg>url=https://front.serverest.dev/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-04-03T19:54:11.367592" elapsed="2.172440"/>
+</kw>
+<status status="PASS" start="2024-04-03T19:54:05.107006" elapsed="8.433026"/>
+</kw>
+<status status="PASS" start="2024-04-03T19:54:05.107006" elapsed="8.433026"/>
+</test>
+<status status="PASS" start="2024-04-03T19:54:04.918220" elapsed="8.625320"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testes Serverest">Testes Serverest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
